@@ -20,7 +20,7 @@ class CreateFactYouzanTradeTable extends Migration
 
         $sql = <<<SQL
 CREATE TABLE `fact_youzan_trade` (
-  `tid` varchar(32) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '交易编号',
+  `tid` varchar(32) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT '交易编号',
   `num` int(11) DEFAULT NULL COMMENT '商品购买数量。当一个trade对应多个order的时候，值为所有商品购买数量之和',
   `item_id` int(11) DEFAULT NULL COMMENT '商品数字编号。当一个trade对应多个order的时候，值为第一个交易明细中的商品的编号',
   `price` DECIMAL(10,2) DEFAULT NULL COMMENT '商品价格。精确到2位小数；单位：元。当一个trade对应多个order的时候，值为第一个交易明细中的商品的价格',
