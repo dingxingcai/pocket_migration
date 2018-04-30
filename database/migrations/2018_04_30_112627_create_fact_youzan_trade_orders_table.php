@@ -20,8 +20,8 @@ class CreateFactYouzanTradeOrdersTable extends Migration
 
         $sql = <<<SQL
 CREATE TABLE `fact_youzan_trade_orders` (
-  `tid` varchar(32) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '交易编号',
-  `oid` int(11) DEFAULT NULL COMMENT '交易明细编号。该编号并不唯一，只用于区分交易内的多条明细记录',
+  `tid` varchar(32) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT '交易编号',
+  `oid` int(11) NOT NULL COMMENT '交易明细编号。该编号并不唯一，只用于区分交易内的多条明细记录',
   `item_id` int(11) DEFAULT NULL COMMENT '商品数字编号',
   `sku_id` int(11) DEFAULT NULL COMMENT 'Sku的ID，sku_id 在系统里<span style="color: #ff0000;">并不是唯一的</span>，结合商品ID一起使用才是唯一的。',
   `sku_unique_code` varchar(64) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'Sku在系统中的唯一编号，可以在开发者的系统中用作 Sku 的唯一ID，但不能用于调用接口',

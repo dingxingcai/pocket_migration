@@ -15,7 +15,7 @@ class CreateFactYouzanTradeFansInfoTable extends Migration
     {
         $sql = <<<SQL
 CREATE TABLE `fact_youzan_trade_fans_info` (
-  `tid` varchar(32) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '交易编号',
+  `tid` varchar(32) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT '交易编号',
   `fans_nickname` varchar(64) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '粉丝昵称 订单信息中存在三方(例如微信)粉丝昵称则取粉丝昵称;取不到粉丝昵称时则使用买家手机号;以上两点未满足时取买家收货人信息;无收货人信息时返回[匿名]',
   `fans_id` BIGINT DEFAULT NULL COMMENT '粉丝id',
   `buyer_id` int(11) DEFAULT NULL COMMENT '有赞买家ID',
